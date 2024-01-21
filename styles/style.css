@@ -1,5 +1,346 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: var(--page-background-image);
+  background-color: var(--page-background-color);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-width: 375px;
+  max-width: 1024px;
 }
+
+.shadow__decor {
+  text-shadow: 2px 2px 0px var(--brand-color);
+}
+
+.header {
+  display: grid;
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.rec__decor {
+  position: absolute;
+  z-index: -1;
+  visibility: var(--rec-decor-visibility);
+  gap: 10px;
+  display: inline-flex;
+  justify-self: end;
+  margin-inline-end: 8px;
+}
+
+.rec__decor::before {
+  content: "REC";
+  color: var(--brand-color);
+  text-align: center;
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  align-self: center;
+}
+
+.rec__decor::after {
+  content: "";
+  align-self: center;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--brand-color);
+  background: var(--brand-color);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.decorated__area::before,
+.decorated__area::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated__area::before {
+  border-inline-end: 1px solid var(--second-color);
+  border-block-start: 1px solid var(--second-color);
+  justify-self: end;
+  align-self: flex-start;
+}
+
+.decorated__area::after {
+  border-inline-start: 1px solid var(--second-color);
+  border-block-end: 1px solid var(--second-color);
+  justify-self: start;
+  align-self: flex-end;
+}
+
+.header__theme-menu {
+  margin-block-start: 75px;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  color: var(--second-color);
+  text-align: center;
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  gap: 12px;
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  padding-inline: 13px;
+  background-color: transparent;
+  border: none;
+}
+
+.header__theme-menu-item:last-child {
+  margin-block-end: 0;
+}
+
+.header__theme-menu-button:active {
+  border: 1px solid var(--brand-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--brand-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--brand-color);
+}
+
+.header__title {
+  flex-shrink: 0;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0px var(--brand-color);
+  font-family: IBM Plex Mono;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  margin-block-start: 65px;
+}
+
+.header__text {
+  color: var(--accent-color);
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+  margin-block-start: 55px;
+  margin-block-end: 65px;
+  inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+  justify-self: center;
+}
+
+.title-decore {
+  background-color: var(--brand-color);
+}
+
+.main {
+  margin-top: 40px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+  padding-inline: 10px;
+  min-width: 375px;
+  margin-block-end: 50px;
+}
+
+.section__title {
+  color: var(--second-color);
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.section__subtitle {
+  color: var(--accent-color);
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.cards {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  gap: 10px;
+}
+
+.card__title {
+  color: var(--accent-color);
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+}
+
+.card__title-normal {
+  font-weight: 400;
+}
+
+.card__text {
+  color: var(--text-color);
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.section-picture {
+  gap: 10px;
+}
+
+
+.picture__list {
+  display: grid;
+  gap: 10px;
+}
+
+.picture__list-item-img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 0;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.footer {
+  display: grid;
+  width: 100%;
+  height: 667px;
+  padding: 10px;
+  margin-block-start: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__text {
+  color: var(--title-color);
+  font-family: var(--page-font-family);
+  font-size: 116px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  text-transform: lowercase;
+}
+
+@media (width >= 768px) {
+
+  .header {
+    padding: 20px;
+  }
+
+  .header__title {
+    margin-block-start: 173px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__theme-menu {
+    margin-block-start: 192px;
+  }
+
+  .header__text {
+    justify-self: end;
+    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+  }
+
+  .section {
+    grid-template-columns: clamp(236px, calc(100% / 3.25), 315px) 1fr;
+  }
+
+  .cards-what {
+    grid-column-start: span 2;
+  }
+
+  .section-picture {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cards-how{
+    grid-column-start: 2;
+  }
+
+  .picture__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .picture__list-item:first-child,
+  .picture__list-item:last-child {
+    grid-column-start: span 2;
+  }
+
+  .picture__list-item:nth-child(2),
+  .picture__list-item:nth-child(3) {
+    grid-row-start: span 2;
+  }
+
+}
+
+@media (width >= 1024px) {
+  .header__title {
+    text-shadow: 4px 4px 0 var(--color-purple-2, #ff0070);
+  }
+
+  .section {
+    column-gap: 30px;
+  }
+
+  .cards-what {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    margin-inline-start: 20px;
+    margin-block-start: 0;
+    margin-block-end: 215px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+}
+  
