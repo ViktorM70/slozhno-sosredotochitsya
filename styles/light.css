@@ -1,14 +1,4 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
-.page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  .page.theme_light {
     --text-color: var(--color-black-2, #353430);
     --brand-color: var(--color-pink-4, #ff8dcb);
     --title-color: var(--color-pink-3, #ffc2e6);
@@ -33,5 +23,9 @@
       --page-background-image: url("../images/cover-image-light.png");
   
       --rec-decor-visibility: hidden;
+    }
+
+    .header__theme-menu-button_type_light {
+      outline: 1px solid var(--second-color);
     }
 }
